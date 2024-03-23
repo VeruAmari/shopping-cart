@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
-import App from '../src/App.jsx';
+import App from '../src/components/App.jsx';
 
 describe('App', () => {
   it('renders header', () => {
-    render(<App/>);
+    render(<App />);
 
-    expect(screen.getByText("Header").textContent).toMatch(/header/i);
+    expect(screen.getByText('Header').textContent).toMatch(/header/i);
 
     // check if App components renders headline
   });
