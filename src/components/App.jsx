@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { H1, H2, H3, H4, H5, H6 } from './Headers';
 import { DefaultButton, CuterButton } from './Buttons';
+const GlobalStyles = createGlobalStyle`
+  html {
+    --basic-color: pink;
+  };
+`;
 
 function App() {
   const [count, setCount] = useState(0);
