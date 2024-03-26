@@ -6,10 +6,15 @@
   color: #213547;
   background-color: #ffffff;
 
-   font-synthesis: none;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -21,11 +26,9 @@ a:hover {
   color: #747bff;
 }
 body {
+  padding: 0;
   margin: 0;
   display: grid;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
