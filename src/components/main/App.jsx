@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Homepage from './Homepage';
 import styled, { createGlobalStyle } from 'styled-components';
-import { H1, H2, H3, H4, H5, H6 } from '../sub/Headers';
+import { Heading } from '../sub/Headers';
 import { LightColorfulButton, DarkButton } from '../sub/Buttons';
 const GlobalStyles = createGlobalStyle`
   html {
@@ -23,8 +23,12 @@ const App = () => {
     <>
       <GlobalStyles />
       <Homepage>
-        <H1 className="header">Header</H1>
-        <H2 className="smaller-header">Smaller Header</H2>
+        <Heading level={1} className="header">
+          Header
+        </Heading>
+        <Heading level="2" className="smaller-header">
+          Smaller Header
+        </Heading>
         <p className="paragraph">Paragraph with some dummy text.</p>
         <ul>
           <li>Dummy 1</li>
