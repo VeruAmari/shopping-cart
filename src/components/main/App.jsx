@@ -5,7 +5,6 @@ import { Heading } from '../sub/Headers';
 import { LightColorfulButton, DarkButton } from '../sub/Buttons';
 const GlobalStyles = createGlobalStyle`
   html {
-    --basic-color: pink;
     --color-1: #333745;
     --color-2: #E63462;
     --color-3: #D4C2FC;
