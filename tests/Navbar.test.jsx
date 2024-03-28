@@ -7,7 +7,5 @@ describe('Navbar', () => {
     render(<Navbar>Header</Navbar>);
 
     expect(screen.getByText('Header').textContent).toMatch(/header/i);
-
-    // check if App components renders headline
   });
 });
