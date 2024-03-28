@@ -6,6 +6,6 @@ describe('Navbar', () => {
   it('renders', () => {
     render(<Navbar>Header</Navbar>);
 
-    expect(screen.getByText('Header').textContent).toMatch(/header/i);
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
 });
