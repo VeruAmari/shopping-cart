@@ -1,9 +1,18 @@
 import styled from 'styled-components';
-import { AsideContainer } from '../sub/Containers';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return <AsideContainer as="nav"> Navbar </AsideContainer>;
+  return (
+    <Wrapper as="nav">
+      <Link to="/">Scui</Link>
+      <Link to="/shop">Shop</Link>
+      <Link to="/ckeckout">Checkout</Link>
+    </Wrapper>
+  );
 };
+
+const Wrapper = styled.div`
+  align-self: start;
+`;
 
 export default Navbar;
