@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { NavElement } from '../sub/Containers';
 import Logo from './Logo';
-import { NavElement } from '../sub/Containers';
 
 const Navbar = () => {
   return (
