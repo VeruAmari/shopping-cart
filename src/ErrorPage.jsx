@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heading } from './components/sub/Headers';
-import { PageContainer } from './components/sub/Containers';
+import { PageContainer } from './components/main/App';
 
 const ErrorPage = () => {
   return (
