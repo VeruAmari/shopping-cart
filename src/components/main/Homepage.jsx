@@ -9,7 +9,7 @@ const Homepage = ({ children }) => {
     <>
       {children}
       <Heading level={1} className="header">
-        Header
+        Welcome to Scui
       </Heading>
       <Heading level="2" className="smaller-header">
         Smaller Header
