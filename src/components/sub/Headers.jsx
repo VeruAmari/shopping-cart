@@ -5,6 +5,9 @@ const Heading = ({ level, children }) => {
   return <Wrapper as={tag}>{children}</Wrapper>;
 };
 
-const Wrapper = styled.h1``;
+const Wrapper = styled.h1`
+  display: flex;
+  justify-content: center;
+`;
 
 export { Heading };

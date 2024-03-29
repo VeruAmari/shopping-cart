@@ -7,6 +7,11 @@ const Logo = () => {
 };
 
 const LogoWrapper = styled.span`
+  font-family: var(--logo-font-family);
+  font-style: var(--logo-font-style);
+  font-weight: var(--logo-font-weight);
+  font-size: 1.2rem;
+
   ${HeaderWrapper} > & {
     color: var(--color-5);
   }
