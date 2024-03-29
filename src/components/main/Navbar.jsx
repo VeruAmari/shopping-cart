@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { NavElement } from '../sub/Containers';
 
 const Navbar = () => {
   return (
@@ -26,12 +27,6 @@ const Wrapper = styled.div`
   display: grid;
   justify-content: space-between;
   background-color: var(--color-2);
-`;
-export const NavElement = styled.div`
-  padding: 0.5rem;
-  &:hover {
-    background-color: var(--color-5);
-  }
 `;
 
 export default Navbar;
