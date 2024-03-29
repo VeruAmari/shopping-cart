@@ -7,43 +7,30 @@ import cart from './cart.svg';
 const Navbar = () => {
   return (
     <Wrapper as="nav">
-      <Link to="/">
-        <NavElement>
-          <Logo />
-        </NavElement>
-      </Link>
-      <InnerWrapper>
-        <Link to="shop">
-          <NavElement>Shop</NavElement>
-        </Link>
-        <Link to="checkout">
-          <NavElement>
-            <StyledCart />
-          </NavElement>
-        </Link>
-      </InnerWrapper>
+      <NavElement to="/">
+        <Logo />
+      </NavElement>
+      <NavElement to="shop">Go Shopping</NavElement>
+
+      <NavElement to="checkout">
+        <StyledCart />
+      </NavElement>
     </Wrapper>
   );
 };
 
-const InnerWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-`;
 const Wrapper = styled.div`
   align-self: start;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   display: grid;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: var(--color-2);
 `;
 
-const Cart = () => <img src={cart} alt="" />;
-
-const StyledCart = styled(Cart)`
-  color: white;
-  max-width: 50px;
-  max-height: 50px;
+const StyledCart = styled.div`
+  background-image: url(${cart});
+  width: 25px;
+  height: 25px;
 `;
 
 export default Navbar;
