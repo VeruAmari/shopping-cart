@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   grid-template-columns: auto auto auto;
   display: grid;
   justify-content: space-around;
-  background-color: var(--color-2);
+  background-color: var(--color-3);
 `;
 
 const StyledCart = styled.div`
