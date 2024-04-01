@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { AsideContainer } from '../sub/Containers';
-import { Heading } from '../sub/Headers';
+import Heading from '../sub/Headers';
 import { LightColorfulButton, DarkButton } from '../sub/Buttons';
 
 const Homepage = ({ children }) => {
