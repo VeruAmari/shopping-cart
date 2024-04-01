@@ -1,4 +1,5 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
@@ -32,5 +33,14 @@ export const PageContainer = styled.div`
   width: 100vw;
   box-sizing: content-box;
 `;
+
+App.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
+};
 
 export default App;
