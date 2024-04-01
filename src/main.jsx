@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   html {
     --color-1: #333745;
     --color-2: #E63462;
-    --color-3: #D4C2FC;
+    --color-3: #af9164;
     --color-4: #C7EFCF;
     --color-5: #EEF5DB;
 
