@@ -6,6 +6,7 @@ import {
 import App from './components/main/App';
 import ErrorPage from './ErrorPage';
 import Homepage from './components/main/Homepage';
+import Shop from './components/main/Shop';
 import Shopping from './components/main/Shopping';
 import Checkout from './components/main/Checkout';
 
@@ -18,11 +19,18 @@ const Router = () => {
       children: [
         { index: true, element: <Navigate to="home" /> },
         { path: 'home', element: <Homepage />, errorElement: <ErrorPage /> },
-        { path: 'shop', element: <Shopping />, errorElement: <ErrorPage /> },
         {
-          path: 'checkout',
-          element: <Checkout />,
+          path: 'shopping',
+          element: <Shopping />,
           errorElement: <ErrorPage />,
+          children: [
+            { path: 'shop', element: <Shop />, errorElement: <ErrorPage /> },
+            {
+              path: 'checkout',
+              element: <Checkout />,
+              errorElement: <ErrorPage />,
+            },
+          ],
         },
       ],
     },

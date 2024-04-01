@@ -10,9 +10,9 @@ const Navbar = () => {
       <NavElement to="/">
         <Logo />
       </NavElement>
-      <NavElement to="shop">Go Shopping</NavElement>
+      <NavElement to="shopping/shop">Go Shopping</NavElement>
 
-      <NavElement to="checkout">
+      <NavElement to="shopping/checkout">
         <StyledCart />
       </NavElement>
     </Wrapper>
