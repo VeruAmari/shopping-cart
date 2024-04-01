@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { NavElement } from '../sub/Containers';
-import Logo from './Logo';
+import Logo from '../sub/Logo';
 import cart from './cart.svg';
 
 const Navbar = () => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { NavElement } from '../sub/Containers';
-import { HeaderWrapper } from './Header';
+import { NavElement } from './Containers';
+import { HeaderWrapper } from '../main/Header';
 
 const Logo = () => {
   return <LogoWrapper>Scui</LogoWrapper>;

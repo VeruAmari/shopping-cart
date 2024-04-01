@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Logo from './Logo';
+import Logo from '../sub/Logo';
 
 const Header = () => {
   return (
