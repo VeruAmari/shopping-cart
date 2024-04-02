@@ -2,6 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import styled from 'styled-components';
 import Card from '../sub/Card';
 import Heading from '../sub/Headers';
+import Logo from '../sub/Logo';
 
 const Shop = () => {
   const [data, setProducts] = useOutletContext();
@@ -24,7 +25,9 @@ const Shop = () => {
   }
   return (
     <Wrapper>
-      <Heading>Shopping Page</Heading>
+      <Heading>
+        <Logo size="3" /> Shop
+      </Heading>
       <CardsContainer>{cards}</CardsContainer>
     </Wrapper>
   );
@@ -32,6 +35,7 @@ const Shop = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
+
   display: grid;
 `;
 const CardsContainer = styled.div`

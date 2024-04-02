@@ -7,6 +7,7 @@ const Heading = ({ level, children }) => {
 };
 
 const Wrapper = styled.h1`
+  margin: 0.5rem;
   display: flex;
   justify-content: center;
 `;
