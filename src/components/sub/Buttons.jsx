@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { AsideContainer } from './Containers';
 
-const LightColorfulButton = styled.button`
+const ButtonBaseStyles = styled.button`
+  max-width: 7rem;
+  max-height: 3rem;
+`;
+
+const LightColorfulButton = styled(ButtonBaseStyles)`
   background-color: var(--color-4);
   color: var(--color-2);
   border: 1px solid var(--color-2);
@@ -20,7 +25,7 @@ const LightColorfulButton = styled.button`
   }
 `;
 
-const DarkButton = styled.button`
+const DarkButton = styled(ButtonBaseStyles)`
   background-color: var(--color-1);
   color: var(--color-4);
   border: 1px solid var(--color-1);
