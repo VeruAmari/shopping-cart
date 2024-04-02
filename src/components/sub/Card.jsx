@@ -15,7 +15,7 @@ const Card = ({ title, id, price, description, image }) => {
         <StyledImg onClick={onClick} src={image} alt={title} />
       </ImageWrapper>
       <ContentWrapper>
-        <Heading level="3">{title}</Heading>
+        <Heading level="4">{title}</Heading>
         <Heading level="3">${price}</Heading>
         {hover && <p>{description}</p>}
       </ContentWrapper>
@@ -25,6 +25,8 @@ const Card = ({ title, id, price, description, image }) => {
 
 const Wrapper = styled.div`
   box-shadow: 2px 2px 7px var(--color-1);
+  grid-template-rows: auto 1fr;
+  align-items: space-between;
   box-sizing: border-box;
   display: grid;
   max-width: 300px;
@@ -44,6 +46,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
+  align-content: space-between;
   padding: 1rem;
   display: grid;
   justify-content: center;
