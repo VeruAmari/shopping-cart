@@ -1,10 +1,27 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useOutletContext } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 
 const Shopping = ({ children }) => {
+  const [data, setData] = useState('');
+  const [products, setProducts] = useOutletContext();
+
+  useEffect(() => {
+    let getData = true;
+    if (getData) {
+      fetch('https://fakestoreapi.com/products')
+        .then((res) => res.json())
+        .then((json) => setData(json));
+      console.log('Fetched data.');
+    }
+    return () => {
+      getData = false;
+    };
+  }, []);
+
   return (
     <>
-      <Outlet />;{children}
+      <Outlet context={[data, products, setProducts]} />;{children}
     </>
   );
 };

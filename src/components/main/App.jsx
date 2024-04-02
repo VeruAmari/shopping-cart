@@ -5,14 +5,16 @@ import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { useState } from 'react';
 
 const App = ({ children }) => {
+  const [products, setProducts] = useState('');
   return (
     <PageContainer>
       <Header />
-      <Navbar />
+      <Navbar products={products} />
       <Page>
-        <Outlet />
+        <Outlet context={[products, setProducts]} />
         {children}
       </Page>
       <Footer />

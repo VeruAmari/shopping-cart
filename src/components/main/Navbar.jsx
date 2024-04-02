@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import { NavElement } from '../sub/Containers';
 import Logo from '../sub/Logo';
 import cart from './cart.svg';
 
-const Navbar = () => {
+const Navbar = ({ products }) => {
+  console.log('Products:', products);
   return (
     <Wrapper as="nav">
       <NavElement to="/">
@@ -32,5 +34,9 @@ const StyledCart = styled.div`
   width: 25px;
   height: 25px;
 `;
+
+Navbar.propTypes = {
+  products: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+};
 
 export default Navbar;
