@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Heading from './Headers';
 
+const radius = '7px';
+
 const Card = ({ title, id, price, description, image }) => {
   const onClick = () => {
     console.log(id);
@@ -23,16 +25,16 @@ const Card = ({ title, id, price, description, image }) => {
 
 const Wrapper = styled.div`
   box-shadow: 2px 2px 7px var(--color-1);
-  justify-content: center;
-  justify-items: center;
   box-sizing: border-box;
   display: grid;
   max-width: 300px;
   height: auto;
-  border-radius: 7px;
+  border-radius: ${radius};
   background: radial-gradient(var(--color-5), var(--color-3));
 `;
 const ImageWrapper = styled.div`
+  border-top-left-radius: ${radius};
+  border-top-right-radius: ${radius};
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -49,6 +51,8 @@ const ContentWrapper = styled.div`
 `;
 
 const StyledImg = styled.img`
+  border-top-left-radius: ${radius};
+  border-top-right-radius: ${radius};
   max-width: 100%;
   max-height: 200px;
 `;
