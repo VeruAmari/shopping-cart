@@ -12,12 +12,16 @@ const Homepage = ({ children }) => {
         Welcome to Scui
       </Heading>
       <Heading level="2" className="smaller-header">
-        <em>The home of designer squirrels.</em>
+        <em>The home of worlds best designer squirrels.</em>
       </Heading>
       <p className="paragraph">
         Were you looking for a new sweater? Or perhaps a set of fancy gloves?
       </p>
-      <Circle />
+      <CircleWrapper>
+        <Circle />
+        <Circle />
+        <Circle />
+      </CircleWrapper>
       <LightColorfulButton>Click me!</LightColorfulButton>
       <DarkButton>No, click me!</DarkButton>
       <AsideContainer>
@@ -27,7 +31,11 @@ const Homepage = ({ children }) => {
     </>
   );
 };
-
+const CircleWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr;
+`;
 const Circle = styled.div`
   width: 100px;
   height: 100px;
