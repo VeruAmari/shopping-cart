@@ -31,7 +31,7 @@ export const PageContainer = styled.div`
   background-color: var(--color-5);
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   box-sizing: content-box;
 `;
