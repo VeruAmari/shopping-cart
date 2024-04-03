@@ -26,7 +26,7 @@ const Shop = () => {
   }
   return (
     <Wrapper>
-      <Heading>
+      <Heading margin="3">
         <Logo size="3" /> Shop
       </Heading>
       {(!data && <Loading />) || <CardsContainer>{cards}</CardsContainer>}
@@ -40,9 +40,11 @@ const Wrapper = styled.div`
   display: grid;
 `;
 const CardsContainer = styled.div`
+  padding: 1rem;
+  justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 10px;
+  grid-gap: 2rem;
   display: grid;
 `;
 
