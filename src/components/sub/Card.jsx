@@ -22,8 +22,8 @@ const Card = ({
       <ImageWrapper>
         <StyledImg onClick={onClick} src={image} alt={title} />
       </ImageWrapper>
+      <ProductName>{title}</ProductName>
       <ContentWrapper>
-        <Heading level="4">{title}</Heading>
         <Heading level="3">${price}</Heading>
         <ButtonsContainer>
           <MinusButton
@@ -33,6 +33,9 @@ const Card = ({
           >
             -
           </MinusButton>
+          <CurrentAmount>
+            {cartProducts[id] ? cartProducts[id] : '0'}
+          </CurrentAmount>
           <PlusButton
             onClick={() => {
               onClickIncrease(id);
@@ -42,25 +45,36 @@ const Card = ({
           </PlusButton>
         </ButtonsContainer>
 
-        <Heading level="4">
-          {cartProducts[id] ? cartProducts[id] : '0'} on cart.
-        </Heading>
+        <Heading level="4"></Heading>
       </ContentWrapper>
     </Wrapper>
   );
 };
 
-const SharedButtonStyles = styled.button`
-  font-size: 2rem;
-  padding: 0;
-  padding-left: 0.5rem;
+const ProductName = styled.p`
+  display: grid;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+`;
+
+const CurrentAmount = styled.div`
+  font-size: 1rem;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 2rem;
   background-color: var(--color-5);
   color: var(--color-1);
   height: 2rem;
   display: grid;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
+  padding: 0;
+`;
+const SharedButtonStyles = styled(CurrentAmount)`
+  font-size: 2rem;
+  border-radius: 5px;
+  padding-left: 0.5rem;
   padding-right: 0.5rem;
   &:hover {
     color: var(--color-5);
@@ -83,21 +97,26 @@ const MinusButton = styled(SharedButtonStyles)`
   }
 `;
 const ButtonsContainer = styled.div`
+  align-self: end;
   justify-items: center;
+  justify-content: center;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
 `;
 const Wrapper = styled.div`
-  box-shadow: 2px 2px 7px var(--color-1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   grid-template-rows: auto 1fr;
   align-items: space-between;
   box-sizing: border-box;
   display: grid;
-  max-width: 250px;
+  width: 250px;
   height: auto;
   border-radius: ${radius};
   background: radial-gradient(var(--color-5), var(--color-3));
+  &:hover {
+    box-shadow: 5px 5px 15px rgba(20, 0, 0, 0.5);
+  }
 `;
 const ImageWrapper = styled.div`
   border-top-left-radius: ${radius};
@@ -111,7 +130,8 @@ const ImageWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  align-content: space-between;
+  align-items: start;
+  align-content: end;
   padding: 1rem;
   display: grid;
   justify-content: center;
