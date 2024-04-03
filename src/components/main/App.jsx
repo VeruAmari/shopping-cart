@@ -8,13 +8,13 @@ import Footer from './Footer';
 import { useState } from 'react';
 
 const App = ({ children }) => {
-  const [products, setProducts] = useState('');
+  const [cartProducts, setCartProducts] = useState('');
   return (
     <PageContainer>
       <Header />
-      <Navbar products={products} />
+      <Navbar products={cartProducts} />
       <Page>
-        <Outlet context={[products, setProducts]} />
+        <Outlet context={[cartProducts, setCartProducts]} />
         {children}
       </Page>
       <Footer />

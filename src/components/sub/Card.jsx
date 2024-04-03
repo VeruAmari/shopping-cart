@@ -4,11 +4,19 @@ import Heading from './Headers';
 
 const radius = '7px';
 
-const Card = ({ title, id, price, description, image }) => {
+const Card = ({
+  title,
+  id,
+  price,
+  image,
+  onClickIncrease,
+  onClickDecrease,
+  cartProducts,
+}) => {
   const onClick = () => {
     console.log(id);
   };
-  let hover = false;
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -17,7 +25,23 @@ const Card = ({ title, id, price, description, image }) => {
       <ContentWrapper>
         <Heading level="4">{title}</Heading>
         <Heading level="3">${price}</Heading>
-        {hover && <p>{description}</p>}
+        <button
+          onClick={() => {
+            onClickIncrease(id);
+          }}
+        >
+          Add
+        </button>
+        <button
+          onClick={() => {
+            onClickDecrease(id);
+          }}
+        >
+          Remove
+        </button>
+        <Heading level="3">
+          {cartProducts[id] ? cartProducts[id] : '0'} on cart.
+        </Heading>
       </ContentWrapper>
     </Wrapper>
   );
@@ -29,7 +53,7 @@ const Wrapper = styled.div`
   align-items: space-between;
   box-sizing: border-box;
   display: grid;
-  max-width: 300px;
+  max-width: 250px;
   height: auto;
   border-radius: ${radius};
   background: radial-gradient(var(--color-5), var(--color-3));
@@ -67,6 +91,9 @@ Card.propTypes = {
   category: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  onClickDecrease: PropTypes.func,
+  onClickIncrease: PropTypes.func,
+  cartProducts: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 export default Card;

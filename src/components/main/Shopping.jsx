@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Shopping = ({ children }) => {
   const [data, setData] = useState('');
-  const [products, setProducts] = useOutletContext();
+  const [cartProducts, setCartProducts] = useOutletContext();
 
   useEffect(() => {
     let getData = true;
@@ -21,7 +21,7 @@ const Shopping = ({ children }) => {
 
   return (
     <>
-      <Outlet context={[data, products, setProducts]} />;{children}
+      <Outlet context={[data, cartProducts, setCartProducts]} />;{children}
     </>
   );
 };
