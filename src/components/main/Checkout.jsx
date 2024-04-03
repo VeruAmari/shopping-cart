@@ -8,7 +8,7 @@ const Checkout = ({ children }) => {
   console.log(data, products, setProducts);
   return (
     <Wrapper>
-      <Heading>Checkout Page</Heading>
+      <Heading margin="3">Checkout Page</Heading>
       {children}
     </Wrapper>
   );

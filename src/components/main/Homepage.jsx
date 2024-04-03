@@ -9,7 +9,7 @@ const Homepage = ({ children }) => {
   return (
     <>
       {children}
-      <Heading level={1} className="header">
+      <Heading margin="3" level={1} className="header">
         Welcome to Scui
       </Heading>
       <Heading level="2" className="smaller-header">
