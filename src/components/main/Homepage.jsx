@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { AsideContainer } from '../sub/Containers';
 import Heading from '../sub/Headers';
 import { LightColorfulButton, DarkButton } from '../sub/Buttons';
+import Loading from '../sub/Loading';
 
 const Homepage = ({ children }) => {
   return (
@@ -18,7 +19,7 @@ const Homepage = ({ children }) => {
         Were you looking for a new sweater? Or perhaps a set of fancy gloves?
       </p>
       <CircleWrapper>
-        <Circle />
+        <Loading />
         <Circle />
         <Circle />
       </CircleWrapper>

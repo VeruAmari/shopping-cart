@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Card from '../sub/Card';
 import Heading from '../sub/Headers';
 import Logo from '../sub/Logo';
+import Loading from '../sub/Loading';
 
 const Shop = () => {
   const [data, setProducts] = useOutletContext();
@@ -28,7 +29,7 @@ const Shop = () => {
       <Heading>
         <Logo size="3" /> Shop
       </Heading>
-      <CardsContainer>{cards}</CardsContainer>
+      {(!data && <Loading />) || <CardsContainer>{cards}</CardsContainer>}
     </Wrapper>
   );
 };
