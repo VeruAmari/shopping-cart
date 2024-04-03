@@ -22,6 +22,8 @@ const Navbar = ({ products }) => {
 };
 
 const Wrapper = styled.div`
+  position: sticky;
+  top: 0;
   align-self: start;
   grid-template-columns: auto auto auto;
   display: grid;

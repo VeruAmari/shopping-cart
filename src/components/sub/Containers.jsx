@@ -16,6 +16,7 @@ const NavElement = styled(Link)`
   padding: 0.5rem;
   &:hover {
     background-color: var(--color-5);
+    color: var(--color-1);
   }
 `;
 export { AsideContainer, NavElement };
