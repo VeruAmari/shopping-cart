@@ -25,21 +25,24 @@ const Card = ({
       <ContentWrapper>
         <Heading level="4">{title}</Heading>
         <Heading level="3">${price}</Heading>
-        <button
-          onClick={() => {
-            onClickIncrease(id);
-          }}
-        >
-          Add
-        </button>
-        <button
-          onClick={() => {
-            onClickDecrease(id);
-          }}
-        >
-          Remove
-        </button>
-        <Heading level="3">
+        <ButtonsContainer>
+          <MinusButton
+            onClick={() => {
+              onClickDecrease(id);
+            }}
+          >
+            -
+          </MinusButton>
+          <PlusButton
+            onClick={() => {
+              onClickIncrease(id);
+            }}
+          >
+            +
+          </PlusButton>
+        </ButtonsContainer>
+
+        <Heading level="4">
           {cartProducts[id] ? cartProducts[id] : '0'} on cart.
         </Heading>
       </ContentWrapper>
@@ -47,6 +50,44 @@ const Card = ({
   );
 };
 
+const SharedButtonStyles = styled.button`
+  font-size: 2rem;
+  padding: 0;
+  padding-left: 0.5rem;
+  background-color: var(--color-5);
+  color: var(--color-1);
+  height: 2rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  padding-right: 0.5rem;
+  &:hover {
+    color: var(--color-5);
+  }
+`;
+const PlusButton = styled(SharedButtonStyles)`
+  border-top-left-radius: 0%;
+  border-left: 1px dotted var(--color-1);
+  border-bottom-left-radius: 0%;
+  &:hover {
+    background-color: var(--color-3);
+  }
+`;
+const MinusButton = styled(SharedButtonStyles)`
+  border-right: 1px dotted var(--color-1);
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  &:hover {
+    background-color: var(--color-2);
+  }
+`;
+const ButtonsContainer = styled.div`
+  justify-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+`;
 const Wrapper = styled.div`
   box-shadow: 2px 2px 7px var(--color-1);
   grid-template-rows: auto 1fr;
