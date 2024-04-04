@@ -48,7 +48,7 @@ const AmountCircle = styled.div`
   top: -30%;
   right: -30%;
   background-color: var(--color-2);
-  color: var(--color-1);
+  color: var(--color-5);
   display: grid;
   justify-items: center;
   justify-content: center;
