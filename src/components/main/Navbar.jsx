@@ -13,8 +13,6 @@ const Navbar = ({ cartProducts }) => {
     }
   }
 
-  console.log(amountOfProducts);
-
   return (
     <Wrapper as="nav">
       <NavElement to="/">
