@@ -8,8 +8,6 @@ import Loading from '../sub/Loading';
 const Shop = () => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
 
-  console.log('Cart products:', cartProducts);
-
   const cards = [];
   const onClickIncrease = (id) => {
     setCartProducts((current) => {
@@ -63,7 +61,7 @@ const CardsContainer = styled.div`
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   display: grid;
 `;
 

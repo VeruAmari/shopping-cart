@@ -13,12 +13,10 @@ const Card = ({
   onClickDecrease,
   cartProducts,
 }) => {
-  const onClick = () => {
-    console.log(id);
-  };
-
+  const onClick = () => {};
+  const isOnCart = !!cartProducts[id];
   return (
-    <Wrapper>
+    <Wrapper isOnCart={isOnCart}>
       <ImageWrapper>
         <StyledImg onClick={onClick} src={image} alt={title} />
       </ImageWrapper>
@@ -113,6 +111,7 @@ const Wrapper = styled.div`
   width: 250px;
   height: auto;
   border-radius: ${radius};
+  outline: ${(props) => (props.isOnCart ? '3px var(--color-2) solid' : 'none')};
   background: radial-gradient(var(--color-5), var(--color-3));
   &:hover {
     box-shadow: 5px 5px 15px rgba(20, 0, 0, 0.5);
