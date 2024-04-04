@@ -8,6 +8,8 @@ import Loading from '../sub/Loading';
 const Shop = () => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
 
+  console.log('Cart products:', cartProducts);
+
   const cards = [];
   const onClickIncrease = (id) => {
     setCartProducts((current) => {
