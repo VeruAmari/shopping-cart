@@ -12,7 +12,7 @@ const App = ({ children }) => {
   return (
     <PageContainer>
       <Header />
-      <Navbar cartProducts={cartProducts} setCartProducts={setCartProducts} />
+      <Navbar cartProducts={cartProducts} />
       <Page>
         <Outlet context={[cartProducts, setCartProducts]} />
         {children}

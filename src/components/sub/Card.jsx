@@ -144,6 +144,15 @@ const StyledImg = styled.img`
   max-height: 200px;
 `;
 
+export const CardsContainer = styled.div`
+  padding: 1rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  display: grid;
+`;
+
 Card.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,

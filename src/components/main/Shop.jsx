@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 import styled from 'styled-components';
-import Card from '../sub/Card';
+import Card, { CardsContainer } from '../sub/Card';
 import Heading from '../sub/Headers';
 import Logo from '../sub/Logo';
 import Loading from '../sub/Loading';
@@ -54,14 +54,6 @@ const Shop = () => {
 const Wrapper = styled.div`
   width: 100vw;
 
-  display: grid;
-`;
-const CardsContainer = styled.div`
-  padding: 1rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: auto;
-  grid-gap: 1rem;
   display: grid;
 `;
 
