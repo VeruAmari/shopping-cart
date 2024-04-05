@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 const Heading = ({ level, children, margin }) => {
   const tag = `h${level}`;
   return (
-    <Wrapper margin={margin} as={tag}>
+    <Wrapper style={{ margin: `${margin ? margin : '0.5'}rem` }} as={tag}>
       {children}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.h1`
-  margin: ${(props) => props.margin + 'rem' || '0.5rem'};
   display: flex;
   justify-content: center;
 `;
