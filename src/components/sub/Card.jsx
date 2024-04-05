@@ -75,6 +75,7 @@ const CurrentAmount = styled.div`
   padding: 0;
 `;
 const SharedButtonStyles = styled(CurrentAmount)`
+  user-select: none;
   font-size: 2rem;
   border-radius: 5px;
   padding-left: 0.5rem;
