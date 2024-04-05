@@ -5,20 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import Card, { CardsContainer } from '../sub/Card';
 const Checkout = ({ children }) => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
-  const onClickIncrease = (id) => {
-    setCartProducts((current) => {
-      const newValue = current[id] ? current[id] + 1 : 1;
 
-      return { ...current, [id]: newValue };
-    });
-  };
-  const onClickDecrease = (id) => {
-    setCartProducts((current) => {
-      const newValue = current[id] ? current[id] - 1 : 0;
-
-      return { ...current, [id]: newValue };
-    });
-  };
   const cards = [];
   for (let product of data) {
     if (cartProducts[product.id]) {
@@ -31,10 +18,8 @@ const Checkout = ({ children }) => {
           description={product.description}
           image={product.image}
           key={product.id}
-          context={[data]}
           cartProducts={cartProducts}
-          onClickDecrease={onClickDecrease}
-          onClickIncrease={onClickIncrease}
+          cb={setCartProducts}
         ></Card>,
       );
     }

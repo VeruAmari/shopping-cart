@@ -4,16 +4,23 @@ import Heading from './Headers';
 
 const radius = '7px';
 
-const Card = ({
-  title,
-  id,
-  price,
-  image,
-  onClickIncrease,
-  onClickDecrease,
-  cartProducts,
-}) => {
-  const onClick = () => {};
+const Card = ({ title, id, price, image, cartProducts, cb }) => {
+  const onClickIncrease = (id, callBack) => {
+    callBack((current) => {
+      const newValue = current[id] ? current[id] + 1 : 1;
+
+      return { ...current, [id]: newValue };
+    });
+  };
+
+  const onClickDecrease = (id, callBack) => {
+    callBack((current) => {
+      const newValue = current[id] ? current[id] - 1 : 0;
+
+      return { ...current, [id]: newValue };
+    });
+  };
+
   const isOnCart = !!cartProducts[id];
 
   const conditionalStyle = {
@@ -23,7 +30,7 @@ const Card = ({
   return (
     <Wrapper style={conditionalStyle}>
       <ImageWrapper>
-        <StyledImg onClick={onClick} src={image} alt={title} />
+        <StyledImg src={image} alt={title} />
       </ImageWrapper>
       <ProductName>{title}</ProductName>
       <ContentWrapper>
@@ -31,7 +38,7 @@ const Card = ({
         <ButtonsContainer>
           <MinusButton
             onClick={() => {
-              onClickDecrease(id);
+              onClickDecrease(id, cb);
             }}
           >
             -
@@ -41,7 +48,7 @@ const Card = ({
           </CurrentAmount>
           <PlusButton
             onClick={() => {
-              onClickIncrease(id);
+              onClickIncrease(id, cb);
             }}
           >
             +
@@ -165,8 +172,7 @@ Card.propTypes = {
   category: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  onClickDecrease: PropTypes.func,
-  onClickIncrease: PropTypes.func,
+  cb: PropTypes.func,
   cartProducts: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
