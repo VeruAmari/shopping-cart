@@ -4,6 +4,7 @@ import Heading from '../sub/Headers';
 import { useOutletContext } from 'react-router-dom';
 import Card, { CardsContainer } from '../sub/Card';
 import { roundToTwo } from '../../helperFunctions';
+import { DarkButton, LightColorfulButton } from '../sub/Buttons';
 
 const Checkout = ({ children }) => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
@@ -57,6 +58,8 @@ const Checkout = ({ children }) => {
               <span>Total:</span>
               <PriceContainer>${total}</PriceContainer>
             </TotalContainer>
+            <ExDarkButton>Confirm Purchase</ExDarkButton>
+            <ExLightColorfulButton>Clear Cart</ExLightColorfulButton>
           </PurchaseSummary>
         </ContentDivider>
       )}
@@ -64,6 +67,14 @@ const Checkout = ({ children }) => {
   );
 };
 
+const ExLightColorfulButton = styled(LightColorfulButton)`
+  justify-self: center;
+  margin: 1rem;
+`;
+const ExDarkButton = styled(DarkButton)`
+  margin: 1rem;
+  justify-self: center;
+`;
 const Wrapper = styled.div`
   display: grid;
 `;
@@ -86,11 +97,10 @@ const CardsContainerEx = styled(CardsContainer)`
   }
 `;
 const PurchaseSummary = styled.div`
-  overflow-y: scroll;
+  padding: 1rem;
   display: grid;
   align-items: start;
   align-content: start;
-  overflow: scroll;
   @media (max-width: 600px) {
     grid-row-start: 1;
     grid-row-end: 2;
