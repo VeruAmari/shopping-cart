@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import Heading from '../sub/Headers';
 import { useOutletContext } from 'react-router-dom';
 import Card, { CardsContainer } from '../sub/Card';
+import { roundToTwo } from '../../helperFunctions';
 
-function roundToTwo(number) {
-  return +(Math.round(number + 'e+2') + 'e-2');
-}
 const Checkout = ({ children }) => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
 
