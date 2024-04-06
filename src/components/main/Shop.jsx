@@ -27,8 +27,8 @@ const Shop = () => {
   }
   return (
     <Wrapper>
-      <Heading margin="3">
-        <Logo size="3" /> Shop
+      <Heading margin="2" level="2">
+        <Logo size="2" /> Shop
       </Heading>
       {(!data && <Loading />) || <CardsContainer>{cards}</CardsContainer>}
     </Wrapper>
@@ -37,7 +37,7 @@ const Shop = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-
+  max-width: 100%;
   display: grid;
 `;
 

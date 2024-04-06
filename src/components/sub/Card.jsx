@@ -119,16 +119,17 @@ const Wrapper = styled.div`
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   grid-template-rows: auto 1fr;
   align-items: space-between;
-  box-sizing: border-box;
   display: grid;
   width: 250px;
   height: auto;
+  max-height: 400px;
   border-radius: ${radius};
   background: radial-gradient(var(--color-5), var(--color-3));
   &:hover {
     box-shadow: 5px 5px 15px rgba(20, 0, 0, 0.5);
   }
 `;
+
 const ImageWrapper = styled.div`
   border-top-left-radius: ${radius};
   border-top-right-radius: ${radius};
@@ -147,6 +148,9 @@ const ContentWrapper = styled.div`
   display: grid;
   justify-content: center;
   justify-items: center;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledImg = styled.img`
