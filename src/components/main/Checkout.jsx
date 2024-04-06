@@ -3,12 +3,28 @@ import PropTypes from 'prop-types';
 import Heading from '../sub/Headers';
 import { useOutletContext } from 'react-router-dom';
 import Card, { CardsContainer } from '../sub/Card';
+
+function roundToTwo(number) {
+  return +(Math.round(number + 'e+2') + 'e-2');
+}
 const Checkout = ({ children }) => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
 
   const cards = [];
+  const purchases = [];
+  let total = 0;
   for (let product of data) {
     if (cartProducts[product.id]) {
+      total = roundToTwo(total + product.price * cartProducts[product.id]);
+      purchases.push(
+        <Product
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          cartProducts={cartProducts}
+          key={'product' + product.id}
+        ></Product>,
+      );
       cards.push(
         <Card
           id={product.id}
@@ -17,7 +33,7 @@ const Checkout = ({ children }) => {
           category={product.category}
           description={product.description}
           image={product.image}
-          key={product.id}
+          key={'card' + product.id}
           cartProducts={cartProducts}
           cb={setCartProducts}
         ></Card>,
@@ -27,17 +43,89 @@ const Checkout = ({ children }) => {
 
   return (
     <Wrapper>
-      <Heading margin="3">Checkout Page</Heading>
+      <Heading margin="2" level="2">
+        Checkout Page
+      </Heading>
       {children}
       {(!cards[0] && (
         <Heading level="2">There are no products in your cart!</Heading>
-      )) || <CardsContainer>{cards}</CardsContainer>}
+      )) || (
+        <ContentDivider>
+          <CardsContainerEx>{cards}</CardsContainerEx>
+          <PurchaseSummary>
+            <h2>Your cart</h2>
+            {purchases}
+            <TotalContainer>
+              <span>Total:</span>
+              <PriceContainer>${total}</PriceContainer>
+            </TotalContainer>
+          </PurchaseSummary>
+        </ContentDivider>
+      )}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   display: grid;
+`;
+
+const ContentDivider = styled.div`
+  box-sizing: border-box;
+  padding: 1rem;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 2fr 1fr;
+  @media (max-width: 600px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+`;
+const CardsContainerEx = styled(CardsContainer)`
+  @media (max-width: 600px) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+`;
+const PurchaseSummary = styled.div`
+  overflow-y: scroll;
+  display: grid;
+  align-items: start;
+  align-content: start;
+  overflow: scroll;
+  @media (max-width: 600px) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+`;
+
+const ProductBase = ({ id, title, price, cartProducts }) => {
+  return (
+    <>
+      <span>
+        {title} ${price}
+        {` x${cartProducts[id]}`}
+      </span>
+      <PriceContainer>${roundToTwo(price * cartProducts[id])}</PriceContainer>
+      <hr />
+    </>
+  );
+};
+
+const TotalContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+`;
+
+const Product = styled(ProductBase)`
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+`;
+const PriceContainer = styled.span`
+  display: grid;
+  justify-content: end;
 `;
 
 Checkout.propTypes = {
@@ -47,6 +135,13 @@ Checkout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.arrayOf(PropTypes.element),
   ]),
+};
+
+ProductBase.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  cartProducts: PropTypes.object,
 };
 
 export default Checkout;
