@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 const Heading = ({ level, children, margin }) => {
   const tag = `h${level}`;
   return (
-    <Wrapper style={{ margin: `${margin ? margin : '0.5'}rem` }} as={tag}>
+    <Wrapper
+      style={{
+        margin: `${!(margin === undefined) && !isNaN(margin) && !(margin === null) ? margin : '0.5'}rem`,
+      }}
+      as={tag}
+    >
       {children}
     </Wrapper>
   );
