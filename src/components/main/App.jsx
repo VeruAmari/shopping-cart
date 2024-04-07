@@ -25,15 +25,16 @@ const App = ({ children }) => {
 const Page = styled.article`
   display: grid;
   justify-content: center;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
 `;
 
 export const PageContainer = styled.div`
   background-color: var(--color-5);
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
-  width: 100vw;
-  box-sizing: content-box;
+  grid-template-rows: auto auto 1fr auto;
 `;
 
 App.propTypes = {

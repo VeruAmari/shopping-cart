@@ -9,20 +9,6 @@ const Shop = () => {
   const [data, cartProducts, setCartProducts] = useOutletContext();
 
   const cards = [];
-  const onClickIncrease = (id) => {
-    setCartProducts((current) => {
-      const newValue = current[id] ? current[id] + 1 : 1;
-
-      return { ...current, [id]: newValue };
-    });
-  };
-  const onClickDecrease = (id) => {
-    setCartProducts((current) => {
-      const newValue = current[id] ? current[id] - 1 : 0;
-
-      return { ...current, [id]: newValue };
-    });
-  };
 
   for (let product of data) {
     cards.push(
@@ -34,17 +20,15 @@ const Shop = () => {
         description={product.description}
         image={product.image}
         key={product.id}
-        context={[data]}
         cartProducts={cartProducts}
-        onClickDecrease={onClickDecrease}
-        onClickIncrease={onClickIncrease}
+        cb={setCartProducts}
       ></Card>,
     );
   }
   return (
     <Wrapper>
-      <Heading margin="3">
-        <Logo size="3" /> Shop
+      <Heading margin="2" level="2">
+        <Logo size="2" /> Shop
       </Heading>
       {(!data && <Loading />) || <CardsContainer>{cards}</CardsContainer>}
     </Wrapper>
@@ -53,7 +37,7 @@ const Shop = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-
+  max-width: 100%;
   display: grid;
 `;
 
