@@ -14,6 +14,8 @@ const NavElement = styled(Link)`
   display: grid;
   align-items: center;
   padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   &:hover {
     background-color: var(--color-5);
     color: var(--color-1);
@@ -22,8 +24,8 @@ const NavElement = styled(Link)`
 
 const ExNavElement = styled(NavElement)`
   border-radius: 30px;
-  border: 2px solid var(--color-5);
-  margin: 1px;
+  border-left: 2px solid var(--color-5);
+  border-right: 2px solid var(--color-5);
   background-color: var(--color-2);
 `;
 
