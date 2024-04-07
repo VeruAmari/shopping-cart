@@ -28,5 +28,3 @@ const ExNavElement = styled(NavElement)`
 `;
 
 export { AsideContainer, NavElement, ExNavElement };
-
-// 27 abril 221
