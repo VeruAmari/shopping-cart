@@ -1,5 +1,5 @@
 function roundToTwo(number) {
-  return +(Math.round(number + 'e+2') + 'e-2');
+  return Math.round(number * 100) / 100;
 }
 
 export { roundToTwo };
