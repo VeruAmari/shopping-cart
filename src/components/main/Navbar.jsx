@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
-import { NavElement } from '../sub/Containers';
+import { NavElement, ExNavElement } from '../sub/Containers';
 import Logo from '../sub/Logo';
 import cart from './cart.svg';
 
@@ -18,10 +18,11 @@ const Navbar = ({ cartProducts }) => {
       <NavElement to="/">
         <Logo />
       </NavElement>
-      <NavElement to="shopping/shop">Go Shopping</NavElement>
+      <ExNavElement to="shopping/shop">To Shop</ExNavElement>
 
       <NavElement to="shopping/checkout">
         <CartWrapper>
+          Cart
           <StyledCart />
           {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
         </CartWrapper>
@@ -41,6 +42,8 @@ const Wrapper = styled.div`
 `;
 
 const CartWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
   position: relative;
 `;
 const AmountCircle = styled.div`
@@ -64,8 +67,8 @@ const AmountCircle = styled.div`
 
 const StyledCart = styled.div`
   background-image: url(${cart});
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 `;
 
 Navbar.propTypes = {

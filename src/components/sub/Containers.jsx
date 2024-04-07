@@ -19,6 +19,14 @@ const NavElement = styled(Link)`
     color: var(--color-1);
   }
 `;
-export { AsideContainer, NavElement };
+
+const ExNavElement = styled(NavElement)`
+  border-radius: 30px;
+  border: 2px solid var(--color-5);
+  margin: 1px;
+  background-color: var(--color-2);
+`;
+
+export { AsideContainer, NavElement, ExNavElement };
 
 // 27 abril 221

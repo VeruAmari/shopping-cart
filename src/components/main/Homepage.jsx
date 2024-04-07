@@ -15,9 +15,9 @@ const Homepage = ({ children }) => {
       <Heading level="2" className="smaller-header">
         <em>The home of worlds best designer squirrels.</em>
       </Heading>
-      <p className="paragraph">
-        Were you looking for a new sweater? Or perhaps a set of fancy gloves?
-      </p>
+      <Heading level="3" className="paragraph">
+        We are <em>squirrels</em>, and we <em>design</em>.
+      </Heading>
       <CircleWrapper>
         <Loading />
         <Circle />
