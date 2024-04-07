@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Heading = ({ level, children, margin }) => {
+  const cleanMargin = +margin;
   const tag = `h${level}`;
   return (
     <Wrapper
       style={{
-        margin: `${!(margin === undefined) && !isNaN(margin) && !(margin === null) ? margin : '0.5'}rem`,
+        margin: `${!(cleanMargin === undefined) && !isNaN(cleanMargin) && !(cleanMargin === null) ? cleanMargin : '0.5'}rem`,
       }}
       as={tag}
     >
