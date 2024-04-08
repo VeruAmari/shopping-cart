@@ -1,54 +1,60 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AsideContainer } from '../sub/Containers';
 import Heading from '../sub/Headers';
-import { LightColorfulButton, DarkButton } from '../sub/Buttons';
 import img0 from './img0.jpg';
+import img1 from './img1.jpg';
 
 const Homepage = ({ children }) => {
   return (
     <>
       {children}
-      <Heading margin="3" level={1} className="header">
+      <Heading margin="1" level={1}>
         Welcome to Scui
       </Heading>
-      <Heading level="2" className="smaller-header">
-        <em>The home of worlds best tailor squirrels.</em>
-      </Heading>
       <Image0 />
-      <Heading level="3" className="paragraph">
-        We are squirrels, we design and build.
+      <Heading level="2" margin="3">
+        <em>Worlds best tailor squirrels workshop.</em>
       </Heading>
-      <LightColorfulButton>Click me!</LightColorfulButton>
-      <DarkButton>No, click me!</DarkButton>
-      <AsideContainer>
-        Hello, I&apos;m an aside.
-        <LightColorfulButton>Click me!</LightColorfulButton>
-      </AsideContainer>
+      <ArticleWrapper>
+        <Image1 />
+        <ArticleContent>
+          Here, squirrels design and build at their hearts content. We provide
+          only a means for them to sell their products.
+        </ArticleContent>
+      </ArticleWrapper>
     </>
   );
 };
 
-/*
-const CircleWrapper = styled.div`
+const ArticleContent = styled.p`
+  padding: 2rem;
+  max-width: 50ex;
+`;
+
+const ArticleWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+  justify-content: center;
   grid-template-rows: 1fr;
+  margin: 2rem;
 `;
-const Circle = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  background-color: pink;
-`;
-*/
 
 const Image0 = styled.div`
-  width: 80vw;
-  height: 500px;
+  width: 100vw;
+  height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${img0});
+  background-position: center 30%;
+`;
+
+const Image1 = styled.div`
+  border-radius: 15px;
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(${img1});
   background-position: center 30%;
 `;
 
