@@ -33,7 +33,7 @@ react-router-dom library.
   TODO!
 
 10_ Style the app nicely!
-  TODO!
+  Done!
 
 11_ Deploy using new router-friendly method
   Done!
