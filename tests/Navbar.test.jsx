@@ -8,7 +8,7 @@ describe('Navbar', () => {
     render(
       // MemoryRouter wrapping Navbar is used to overcome a testing issue related to Link elements not being inside a react-router.
       <MemoryRouter>
-        <Navbar>Header</Navbar>
+        <Navbar/>
       </MemoryRouter>,
     );
 
