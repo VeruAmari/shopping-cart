@@ -24,7 +24,7 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
   const isOnCart = !!cartProducts[id];
 
   const conditionalStyle = {
-    outline: `${isOnCart ? '3px var(--color-2) solid' : 'none'}`,
+    outline: `${isOnCart ? '3px var(--color-1) solid' : 'none'}`,
   };
 
   return (
