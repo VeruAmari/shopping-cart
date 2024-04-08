@@ -122,7 +122,7 @@ const Wrapper = styled.div`
   display: grid;
   width: 250px;
   height: auto;
-  max-height: 400px;
+  max-height: 500px;
   border-radius: ${radius};
   background: radial-gradient(var(--color-5), var(--color-3));
   &:hover {
@@ -144,10 +144,12 @@ const ImageWrapper = styled.div`
 const ContentWrapper = styled.div`
   align-items: start;
   align-content: end;
-  padding: 1rem;
+  padding: 0.5rem;
   display: grid;
   justify-content: center;
   justify-items: center;
+  overflow: scroll;
+  max-height: 100%;
   @media (max-width: 600px) {
     font-size: 1rem;
   }
