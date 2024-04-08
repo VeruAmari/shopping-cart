@@ -23,10 +23,9 @@ const NavElement = styled(Link)`
 `;
 
 const ExNavElement = styled(NavElement)`
-  border-radius: 30px;
   border-left: 2px solid var(--color-5);
   border-right: 2px solid var(--color-5);
-  background-color: var(--color-2);
+  background-color: var(--color-1);
 `;
 
 export { AsideContainer, NavElement, ExNavElement };
