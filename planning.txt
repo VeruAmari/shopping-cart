@@ -2,31 +2,31 @@
   Done!
 
 2_ Plan out Component and folder Structure.
-  TODO!
+  Done!
 
 3_ Two pages min (home and shop)
 Must have a nav bar to switch between them.
-  TODO!
+  Done!
 
 4_ Homepage can be whatevs, just play around.
-  TODO!
+  Done!
 
 5_ Shop page should have a nav-bar-
 displaying number of items in cart.
 Clicking it should toggle checkout menu.
-  TODO!
+  Done!
 
 6_ Each item should have individual
 cards. Cards should have an input field
 with +1 and -1 buttons.
-  TODO!
+  Done!
 
 7_ Items should be fetched from an API.
-  TODO!
+  Done!
 
 8_ On submitting an order, amount on cart
 should update.
-  TODO!
+  Done!
 
 9_ Should test everything, except for
 react-router-dom library.
@@ -36,4 +36,4 @@ react-router-dom library.
   TODO!
 
 11_ Deploy using new router-friendly method
-  TODO!
+  Done!
