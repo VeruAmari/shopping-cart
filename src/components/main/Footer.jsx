@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Footer = () => {
-  return <Wrapper as="footer">Footer</Wrapper>;
+  return <Wrapper as="footer">By veru</Wrapper>;
 };
 
 const Wrapper = styled.div`
