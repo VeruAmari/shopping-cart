@@ -4,6 +4,20 @@ import PropTypes from 'prop-types';
 import { NavElement, ExNavElement } from '../sub/Containers';
 import Logo from '../sub/Logo';
 import cart from './cart.svg';
+import { matchRoutes, useLocation } from 'react-router-dom';
+
+const routes = [
+  { path: '/' },
+  { path: '/home' },
+  { path: '/shopping/shop' },
+  { path: '/shopping/checkout' },
+];
+const useCurrentPath = () => {
+  const location = useLocation();
+  const [{ route }] = matchRoutes(routes, location);
+
+  return route.path;
+};
 
 const Navbar = ({ cartProducts }) => {
   let amountOfProducts = 0;
@@ -12,21 +26,40 @@ const Navbar = ({ cartProducts }) => {
       amountOfProducts += cartProducts[product];
     }
   }
+  const path = useCurrentPath();
 
   return (
     <Wrapper as="nav">
-      <NavElement to="/">
-        <Logo />
-      </NavElement>
-      <ExNavElement to="shopping/shop">To Shop</ExNavElement>
+      {(path === '/home' && (
+        <ExNavElement to="/home">
+          <Logo />
+        </ExNavElement>
+      )) || (
+        <NavElement to="/home">
+          <Logo />
+        </NavElement>
+      )}
+      {(path === '/shopping/shop' && (
+        <ExNavElement to="shopping/shop">To Shop</ExNavElement>
+      )) || <NavElement to="shopping/shop">To Shop</NavElement>}
 
-      <NavElement to="shopping/checkout">
-        <CartWrapper>
-          Cart
-          <StyledCart src={cart} />
-          {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
-        </CartWrapper>
-      </NavElement>
+      {(path === '/shopping/checkout' && (
+        <ExNavElement to="shopping/checkout">
+          <CartWrapper>
+            Cart
+            <StyledCart src={cart} />
+            {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
+          </CartWrapper>
+        </ExNavElement>
+      )) || (
+        <NavElement to="shopping/checkout">
+          <CartWrapper>
+            Cart
+            <StyledCart src={cart} />
+            {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
+          </CartWrapper>
+        </NavElement>
+      )}
     </Wrapper>
   );
 };
