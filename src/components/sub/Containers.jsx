@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const AsideContainer = styled.div`
   background-color: var(--color-2);
-  max-width: 80ex;
+  width: 100vw;
   justify-self: center;
+  min-height: 0.5rem;
   color: var(--color-5);
 `;
 

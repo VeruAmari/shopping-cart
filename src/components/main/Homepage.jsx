@@ -3,18 +3,22 @@ import styled from 'styled-components';
 import Heading from '../sub/Headers';
 import img0 from './img0.jpg';
 import img1 from './img1.jpg';
+import { AsideContainer } from '../sub/Containers';
 
 const Homepage = ({ children }) => {
   return (
     <>
       {children}
-      <Heading margin="1" level={1}>
+      <Heading margin="2" level={1}>
         Welcome to Scui
       </Heading>
+      <AsideContainer>
+        <Heading level="2" margin=".5">
+          <em>Worlds best tailor squirrels workshop.</em>
+        </Heading>
+      </AsideContainer>
       <Image0 />
-      <Heading level="2" margin="3">
-        <em>Worlds best tailor squirrels workshop.</em>
-      </Heading>
+      <AsideContainer></AsideContainer>
       <ArticleWrapper>
         <Image1 />
         <ArticleContent>
