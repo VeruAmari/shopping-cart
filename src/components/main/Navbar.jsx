@@ -79,17 +79,6 @@ const StyledCart = styled.img`
       brightness(97%) contrast(93%);
   }
 `;
-/*
-const StyledCart = styled.div`
-  background-image: url(${cart});
-  width: 20px;
-  height: 20px;
-
-  ${NavElement}:hover > & {
-    fill: var(--color-1);
-  }
-`;
-*/
 
 Navbar.propTypes = {
   cartProducts: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
