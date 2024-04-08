@@ -23,7 +23,7 @@ const Navbar = ({ cartProducts }) => {
       <NavElement to="shopping/checkout">
         <CartWrapper>
           Cart
-          <StyledCart />
+          <StyledCart src={cart} />
           {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
         </CartWrapper>
       </NavElement>
@@ -65,11 +65,31 @@ const AmountCircle = styled.div`
   border-radius: 99%;
 `;
 
+const StyledCart = styled.img`
+  width: 20px;
+  height: 20px;
+
+  /* Set color to #EEF5DB according to script output from https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(93%) sepia(38%) saturate(5337%) hue-rotate(294deg)
+    brightness(140%) contrast(89%);
+
+  ${NavElement}:hover > ${CartWrapper} > & {
+    /* Set color to #333745 according to script output from https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(20%) sepia(20%) saturate(499%) hue-rotate(189deg)
+      brightness(97%) contrast(93%);
+  }
+`;
+/*
 const StyledCart = styled.div`
   background-image: url(${cart});
   width: 20px;
   height: 20px;
+
+  ${NavElement}:hover > & {
+    fill: var(--color-1);
+  }
 `;
+*/
 
 Navbar.propTypes = {
   cartProducts: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
