@@ -59,7 +59,13 @@ const Checkout = ({ children }) => {
               <PriceContainer>${total}</PriceContainer>
             </TotalContainer>
             <ExDarkButton>Confirm Purchase</ExDarkButton>
-            <ExLightColorfulButton>Clear Cart</ExLightColorfulButton>
+            <ExLightColorfulButton
+              onClick={() => {
+                setCartProducts('');
+              }}
+            >
+              Clear Cart
+            </ExLightColorfulButton>
           </PurchaseSummary>
         </ContentDivider>
       )}
