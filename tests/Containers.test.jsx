@@ -15,4 +15,12 @@ describe('NavElement', () => {
 
     expect(screen.getByText('Cart')).toBeInTheDocument();
   });
+  it('matches snapshot', () => {
+    render(
+      <MemoryRouter>
+        <NavElement>Cart</NavElement>
+      </MemoryRouter>,
+    );
+    expect(screen.getByText('Cart')).toMatchSnapshot();
+  });
 });

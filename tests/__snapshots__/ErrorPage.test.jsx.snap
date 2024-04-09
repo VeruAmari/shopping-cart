@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorPage > matches snapshot 1`] = `
+<div
+  class="App__PageContainer-sc-9o5ywn-1 hRIkIP"
+>
+  <h1
+    class="Headers__Wrapper-sc-o55uf2-0 ceolFo"
+    style="margin: 0.5rem;"
+  >
+    Oh no! This route doesn't exist!
+  </h1>
+  Error
+  <a
+    href="/"
+  >
+    You can go back to the home page by clicking here.
+  </a>
+</div>
+`;

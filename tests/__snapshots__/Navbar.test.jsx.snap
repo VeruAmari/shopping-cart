@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > matches snapshot 1`] = `
+<nav
+  class="Navbar__Wrapper-sc-uyr9r3-0 hzwQAV"
+>
+  <a
+    class="Containers__NavElement-sc-1lz7g2b-1 Containers__ExNavElement-sc-1lz7g2b-2 fyMQmt khIBjc"
+    href="/home"
+  >
+    <span
+      class="Logo__LogoWrapper-sc-1s45uey-1 jSojiy"
+      size="1"
+    >
+      Scui
+    </span>
+  </a>
+  <a
+    class="Containers__NavElement-sc-1lz7g2b-1 Containers__ExNavElement-sc-1lz7g2b-2 fyMQmt khIBjc"
+    href="/shopping/shop"
+  >
+    To Shop
+  </a>
+  <a
+    class="Containers__NavElement-sc-1lz7g2b-1 Containers__ExNavElement-sc-1lz7g2b-2 fyMQmt khIBjc"
+    href="/shopping/checkout"
+  >
+    <div
+      class="Navbar__CartWrapper-sc-uyr9r3-1 blSLUB"
+    >
+      Cart
+      <img
+        class="Navbar__StyledCart-sc-uyr9r3-3 jGcCaT"
+        src="/src/components/main/cart.svg"
+      />
+    </div>
+  </a>
+</nav>
+`;

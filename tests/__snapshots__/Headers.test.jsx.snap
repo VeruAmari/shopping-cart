@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Heading > matches snapshot 1`] = `
+<h1
+  class="Headers__Wrapper-sc-o55uf2-0 ceolFo"
+  style="margin: 2rem;"
+>
+  Snapshot
+</h1>
+`;

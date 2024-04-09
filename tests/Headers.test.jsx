@@ -6,7 +6,7 @@ import Heading from '../src/components/sub/Headers';
 describe('Heading', () => {
   it('renders', () => {
     render(<Heading level="1">Level 1 Heading</Heading>);
-    expect(screen.getByText('Level 1 Heading').textContent).toMatch(/level/i);
+    expect(screen.getByText('Level 1 Heading')).toBeInTheDocument();
   });
   it('correctly handles heading levels', () => {
     render(
@@ -57,5 +57,10 @@ describe('Heading', () => {
     expect(
       screen.getByText('Heading margin ignores a null value').style.margin,
     ).toMatch('.5rem');
+  });
+
+  it('matches snapshot', () => {
+    render(<Heading margin="2">Snapshot</Heading>);
+    expect(screen.getByText('Snapshot')).toMatchSnapshot();
   });
 });

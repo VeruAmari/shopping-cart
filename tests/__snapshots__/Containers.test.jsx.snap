@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavElement > matches snapshot 1`] = `
+<a
+  class="Containers__NavElement-sc-1lz7g2b-1 fyMQmt"
+  href="/"
+>
+  Cart
+</a>
+`;

@@ -8,10 +8,18 @@ describe('Navbar', () => {
     render(
       // MemoryRouter wrapping Navbar is used to overcome a testing issue related to Link elements not being inside a react-router.
       <MemoryRouter>
-        <Navbar/>
+        <Navbar />
       </MemoryRouter>,
     );
 
     expect(screen.getByRole('navigation')).toBeInTheDocument();
+  });
+  it('matches snapshot', () => {
+    render(
+      <MemoryRouter>
+        <Navbar />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole('navigation')).toMatchSnapshot();
   });
 });
