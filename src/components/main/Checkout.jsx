@@ -58,7 +58,13 @@ const Checkout = ({ children }) => {
               <span>Total:</span>
               <PriceContainer>${total}</PriceContainer>
             </TotalContainer>
-            <ExDarkButton>Confirm Purchase</ExDarkButton>
+            <ExDarkButton
+              onClick={() => {
+                alert('Thank you for your purchase!');
+              }}
+            >
+              Confirm Purchase
+            </ExDarkButton>
             <ExLightColorfulButton
               onClick={() => {
                 setCartProducts('');
