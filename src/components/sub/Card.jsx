@@ -100,14 +100,18 @@ const SharedStyles = styled.div`
   padding: 0;
 `;
 
-const CurrentAmount = styled(SharedStyles)``;
+const CurrentAmount = styled(SharedStyles)`
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  border: none;
+`;
 
 const SharedButtonStyles = styled(SharedStyles)`
   user-select: none;
   font-size: 2rem;
   border-radius: 5px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   &:hover {
     color: var(--color-5);
   }
