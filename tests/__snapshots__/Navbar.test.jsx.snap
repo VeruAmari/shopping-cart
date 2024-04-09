@@ -31,7 +31,7 @@ exports[`Navbar > matches snapshot 1`] = `
       Cart
       <img
         class="Navbar__StyledCart-sc-uyr9r3-3 jGcCaT"
-        src="/src/components/main/cart.svg"
+        src="/src/assets/cart.svg"
       />
     </div>
   </a>
