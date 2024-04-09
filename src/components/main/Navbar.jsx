@@ -70,6 +70,8 @@ const Wrapper = styled.div`
   align-self: start;
   grid-template-columns: auto auto auto;
   display: grid;
+  border-top: 3px solid var(--color-5);
+  border-bottom: 3px solid var(--color-5);
   justify-content: space-around;
   background-color: var(--color-3);
 `;

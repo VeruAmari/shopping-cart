@@ -10,6 +10,11 @@ const AsideContainer = styled.div`
 `;
 
 const NavElement = styled(Link)`
+  border: transparent 15px solid;
+  border-bottom: 5px solid var(--color-5);
+  border-top: 5px solid var(--color-5);
+  border-left-color: var(--color-3);
+  border-right-color: var(--color-3);
   color: var(--color-5);
   text-align: center;
   display: grid;
@@ -24,8 +29,6 @@ const NavElement = styled(Link)`
 `;
 
 const ExNavElement = styled(NavElement)`
-  border-left: 2px solid var(--color-5);
-  border-right: 2px solid var(--color-5);
   background-color: var(--color-1);
 `;
 
