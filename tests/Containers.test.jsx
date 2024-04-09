@@ -1,8 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-
-// import userEvent from "@testing-library/user-event";
-
 import { NavElement } from '../src/components/sub/Containers';
 import userEvent from '@testing-library/user-event';
 
