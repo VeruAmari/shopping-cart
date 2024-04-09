@@ -66,6 +66,7 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
 const FixedAsideContainer = styled(AsideContainer)`
   height: 0.5rem;
 `;
+
 const ProductName = styled.p`
   display: grid;
   justify-content: center;
@@ -86,6 +87,7 @@ const CurrentAmount = styled.div`
   display: grid;
   padding: 0;
 `;
+
 const SharedButtonStyles = styled(CurrentAmount)`
   user-select: none;
   font-size: 2rem;
@@ -96,6 +98,7 @@ const SharedButtonStyles = styled(CurrentAmount)`
     color: var(--color-5);
   }
 `;
+
 const PlusButton = styled(SharedButtonStyles)`
   border-top-left-radius: 0%;
   border-left: 1px dotted var(--color-1);
@@ -104,6 +107,7 @@ const PlusButton = styled(SharedButtonStyles)`
     background-color: var(--color-3);
   }
 `;
+
 const MinusButton = styled(SharedButtonStyles)`
   border-right: 1px dotted var(--color-1);
   border-top-right-radius: 0%;
@@ -112,6 +116,7 @@ const MinusButton = styled(SharedButtonStyles)`
     background-color: var(--color-2);
   }
 `;
+
 const ButtonsContainer = styled.div`
   align-self: end;
   justify-items: center;
@@ -120,6 +125,7 @@ const ButtonsContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
 `;
+
 const Wrapper = styled.div`
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   grid-template-rows: auto 1fr;
