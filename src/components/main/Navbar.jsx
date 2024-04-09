@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import { NavElement, ExNavElement } from '../sub/Containers';
 import Logo, { OuterLogoWrapper } from '../sub/Logo';
-import cart from './cart.svg';
+import cart from '../../assets/cart.svg';
 import { matchRoutes, useLocation } from 'react-router-dom';
 
 const routes = [

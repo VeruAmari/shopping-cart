@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Heading from '../sub/Headers';
-import img0 from './img0.jpg';
-import img1 from './img1.jpg';
+import img0 from '../../assets/img0.jpg';
+import img1 from '../../assets/img1.jpg';
 import { AsideContainer } from '../sub/Containers';
 
 const Homepage = ({ children }) => {
