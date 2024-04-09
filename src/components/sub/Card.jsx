@@ -45,9 +45,21 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
           >
             -
           </MinusButton>
-          <CurrentAmount>
-            {cartProducts[id] ? cartProducts[id] : '0'}
-          </CurrentAmount>
+          <CurrentAmount
+            as="input"
+            type="tel"
+            onChange={(event) => {
+              cb((current) => {
+                const value = Number(event.target.value);
+                const newValue = Number.isNaN(value) ? 0 : value;
+                return {
+                  ...current,
+                  [id]: newValue,
+                };
+              });
+            }}
+            value={cartProducts[id] ? cartProducts[id] : '0'}
+          />
           <PlusButton
             onClick={() => {
               onClickIncrease(id, cb);
@@ -75,7 +87,7 @@ const ProductName = styled.p`
   padding-right: 1rem;
 `;
 
-const CurrentAmount = styled.div`
+const SharedStyles = styled.div`
   font-size: 1rem;
   justify-content: center;
   align-content: center;
@@ -88,7 +100,9 @@ const CurrentAmount = styled.div`
   padding: 0;
 `;
 
-const SharedButtonStyles = styled(CurrentAmount)`
+const CurrentAmount = styled(SharedStyles)``;
+
+const SharedButtonStyles = styled(SharedStyles)`
   user-select: none;
   font-size: 2rem;
   border-radius: 5px;
