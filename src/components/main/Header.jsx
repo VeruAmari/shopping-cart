@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import Logo from '../sub/Logo';
+import { OuterLogoWrapper } from '../sub/Logo';
 
 const Header = () => {
   return (
     <HeaderWrapper as="header">
-      <Logo />
-      shop
+      <OuterLogoWrapper>
+        <Logo />
+        shop
+      </OuterLogoWrapper>
     </HeaderWrapper>
   );
 };

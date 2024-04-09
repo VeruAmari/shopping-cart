@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const AsideContainer = styled.div`
+  border-top: solid 3px var(--color-5);
+  border-bottom: solid 3px var(--color-5);
   background-color: var(--color-2);
-  width: 100vw;
+  width: 100%;
   justify-self: center;
   min-height: 0.5rem;
   color: var(--color-5);

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import { NavElement, ExNavElement } from '../sub/Containers';
-import Logo from '../sub/Logo';
+import Logo, { OuterLogoWrapper } from '../sub/Logo';
 import cart from './cart.svg';
 import { matchRoutes, useLocation } from 'react-router-dom';
 
@@ -30,36 +30,40 @@ const Navbar = ({ cartProducts }) => {
 
   return (
     <Wrapper as="nav">
-      {(path === '/home' && (
-        <ExNavElement to="/home">
-          <Logo />
-        </ExNavElement>
-      )) || (
-        <NavElement to="/home">
-          <Logo />
-        </NavElement>
-      )}
-      {(path === '/shopping/shop' && (
-        <ExNavElement to="shopping/shop">To Shop</ExNavElement>
-      )) || <NavElement to="shopping/shop">To Shop</NavElement>}
+      <ExNavElement to="/home">
+        {(path === '/home' && (
+          <OuterLogoWrapper>
+            <Logo />
+          </OuterLogoWrapper>
+        )) || <Logo />}
+      </ExNavElement>
 
-      {(path === '/shopping/checkout' && (
-        <ExNavElement to="shopping/checkout">
+      <ExNavElement to="shopping/shop">
+        {(path === '/shopping/shop' && (
+          <OuterLogoWrapper>To Shop</OuterLogoWrapper>
+        )) ||
+          'To Shop'}
+      </ExNavElement>
+
+      <ExNavElement to="shopping/checkout">
+        {(path === '/shopping/checkout' && (
+          <OuterLogoWrapper>
+            <CartWrapper>
+              Cart
+              <StyledCart src={cart} />
+              {cartProducts && (
+                <AmountCircle> {amountOfProducts} </AmountCircle>
+              )}
+            </CartWrapper>
+          </OuterLogoWrapper>
+        )) || (
           <CartWrapper>
             Cart
             <StyledCart src={cart} />
             {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
           </CartWrapper>
-        </ExNavElement>
-      )) || (
-        <NavElement to="shopping/checkout">
-          <CartWrapper>
-            Cart
-            <StyledCart src={cart} />
-            {cartProducts && <AmountCircle> {amountOfProducts} </AmountCircle>}
-          </CartWrapper>
-        </NavElement>
-      )}
+        )}
+      </ExNavElement>
     </Wrapper>
   );
 };

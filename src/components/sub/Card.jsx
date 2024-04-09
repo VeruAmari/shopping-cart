@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Heading from './Headers';
+import { AsideContainer } from './Containers';
 
 const radius = '7px';
 
@@ -32,6 +33,7 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
       <ImageWrapper>
         <StyledImg src={image} alt={title} />
       </ImageWrapper>
+      <FixedAsideContainer />
       <ProductName>{title}</ProductName>
       <ContentWrapper>
         <Heading level="3">${price}</Heading>
@@ -61,6 +63,9 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
   );
 };
 
+const FixedAsideContainer = styled(AsideContainer)`
+  height: 0.5rem;
+`;
 const ProductName = styled.p`
   display: grid;
   justify-content: center;
