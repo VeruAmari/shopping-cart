@@ -177,8 +177,8 @@ const ContentWrapper = styled.div`
   display: grid;
   justify-content: center;
   justify-items: center;
-  overflow: scroll;
   max-height: 100%;
+  overflow: hidden;
   @media (max-width: 600px) {
     font-size: 1rem;
   }
