@@ -48,6 +48,7 @@ const Card = ({ title, id, price, image, cartProducts, cb }) => {
           <CurrentAmount
             as="input"
             type="tel"
+            id={`product-${id}`}
             onChange={(event) => {
               cb((current) => {
                 const value = Number(event.target.value);
